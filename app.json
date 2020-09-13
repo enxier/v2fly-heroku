@@ -7,11 +7,11 @@
             "description": "V2Ray UUID",
             "value": "ad806487-2d26-4636-98b6-ab85cc8521f7"
         },
-        "alterId": {
+        "ALTER": {
             "description": "V2fly alterId",
-            "value": "32"
+            "value": "64"
         },
-        "path": {
+        "PATHKEY": {
             "description": "V2fly ws path",
             "value": "/"
         }
