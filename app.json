@@ -10,9 +10,13 @@
         "alterId": {
             "description": "V2fly alterId",
             "value": "32"
+        },
+        "patn": {
+            "description": "V2fly ws path",
+            "value": "/"
         }
     },
     "website": "https://abluex.com/",
-    "repository": "https://github.com/bclswl0827/v2ray-heroku",
+    "repository": "https://github.com/enxier/v2fly-heroku",
     "stack": "container"
 }
