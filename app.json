@@ -11,7 +11,7 @@
             "description": "V2fly alterId",
             "value": "32"
         },
-        "patn": {
+        "path": {
             "description": "V2fly ws path",
             "value": "/"
         }
