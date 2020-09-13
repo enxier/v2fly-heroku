@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Download and install V2fly
+# Download and install V2Ray
 mkdir /tmp/v2ray
 curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
 unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
@@ -14,14 +14,6 @@ rm -rf /tmp/v2ray
 install -d /usr/local/etc/v2ray
 cat << EOF > /usr/local/etc/v2ray/config.json
 {
- "dns": {
-   "servers": [
-     "https+local://dns.google/dns-query",
-     "https+local://1.1.1.1/dns-query",
-     "localhost"
-   ]
- },
-
     "inbounds": [
         {
             "port": $PORT,
@@ -30,38 +22,24 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "clients": [
                     {
                         "id": "$UUID",
-                        "alterId": "$ALTER"
+                        "alterId": $ALTER
                     }
                 ],
                 "disableInsecureEncryption": true
             },
             "streamSettings": {
-                "network": "ws",
+                "network": "ws"
                 "wsSettings": {
                     "path": "$PATHKEY"
                 }
             }
         }
     ],
-  "outbounds": [{
-    "protocol": "freedom",
-    "settings": {
-      "domainStrategy": "UseIP"
-    }
-  },{
-    "protocol": "blackhole",
-    "settings": {},
-    "tag": "blocked"
-  }],
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "ip": ["geoip:private"],
-        "outboundTag": "blocked"
-      }
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        }
     ]
-  }
 }
 EOF
 
