@@ -30,7 +30,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "clients": [
                     {
                         "id": "$UUID",
-                        "alterId": "$alterId"
+                        "alterId": "$ALTER"
                     }
                 ],
                 "disableInsecureEncryption": true
@@ -38,7 +38,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "streamSettings": {
                 "network": "ws",
                 "wsSettings": {
-                    "path": "$path"
+                    "path": "$PATHKEY"
                 }
             }
         }
